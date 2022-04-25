@@ -1,0 +1,38 @@
+quadrotor_config:
+  seed: 1337
+  info_in_reset: True
+  ctrl_freq: 60
+  pyb_freq: 240
+  gui: False
+  physics: pyb
+  quad_type: 2
+  init_state:
+    init_x: 1
+    init_x_dot: 0
+    init_z: 3
+    init_z_dot: 0
+    init_theta: 0
+    init_theta_dot: 0
+  randomized_init: False
+  randomized_inertial_prop: False
+  task: traj_tracking
+  task_info:
+    trajectory_type: circle
+    num_cycles: 1
+    trajectory_plane: "xz"
+    trajectory_position_offset: [0, 3]
+    trajectory_scale: 1
+  episode_len_sec: 5
+  cost: quadratic
+  done_on_out_of_bound: False
+  disturbances:
+    dynamics:
+    - disturbance_func: step
+      magnitude: [0, 0]
+      step_offset: 0
+
+  random_init: False
+  plot_traj: True
+  save_plot: True
+  discrete_dynamics: True
+  model_step_chk: True
